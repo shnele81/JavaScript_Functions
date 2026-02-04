@@ -3,14 +3,13 @@ console.log("Hello World!\n==========\n");
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
 function printOdds(count){
-    for(let i= 1; i<count; i++){
-        if (i % 2 !== 0){
+    for(let i= 1; i <= count; i++){
+        if (i % 2 != 0){
             console.log(i);
-        } else{
-            continue;
         }
     }
 }
+printOdds(10);
 
 // Exercise 2 Section
 console.log("EXERCISE 2:\n==========\n");
@@ -26,7 +25,7 @@ function checkAge (name, age){
 // Exercise 3
 console.log("EXERCISE 3:\n==========\n");
 function quadrant(x, y){
-    if (x > 0 && y <= 0){
+    if (x > 0 && y > 0){
         console.log("Quadrant One");
     }
     else if (x < 0 && y > 0){
@@ -37,8 +36,14 @@ function quadrant(x, y){
     }
     else if (x > 0 && y < 0){
         console.log("Quadrant Four");
-    }else{
-        console.log("Not in a quadrant");
+    }
+    else if (x == 0 && y != 0){
+        console.log("Axis X")
+    }
+    else if (x != 0 && y == 0){
+        console.log("Axis Y")
+    }else {
+        console.log("Not in a Quadrant");
     }
 }
 
@@ -49,10 +54,10 @@ function typeOfTriangle(sideOne, sideTwo, sideThree){
     if (sideOne + sideTwo < sideThree || sideOne + sideThree < sideTwo || sideTwo + sideThree < sideOne){
         triangleType = "Invalid Triangle";
     }
-    else if (sideOne + sideTwo === sideThree && sideOne + sideThree === sideTwo){
+    else if (sideOne == sideTwo && sideTwo == sideThree){
         triangleType = "Equilateral Triangle";
     }
-    else if (sideOne === sideTwo || sideOne === sideThree || sideTwo === sideThree){
+    else if (sideOne == sideTwo || sideOne == sideThree || sideTwo == sideThree){
         triangleType = "Isosceles Triangle";
     }
     else{
